@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MVT de Baltasar</title>
+</head>
+
+<body style="background-color: rgb(103, 102, 123) ;">
+    <header>
+        <div>
+            <h4>
+                 <a href="http://127.0.0.1:8000/diadehoy/"> Fecha de hoy </a>
+            </h4>
+            <h1 style="display: flexbox; color: rgb(0, 1, 1); position: relative; top: 10px; left: 550px; font-size: 40px;border: dotted; width: max-content;">
+                Primer trabajo MVT
+            </h1>
+            <h2 style="display: flexbox; position: relative; top: 10px; left: 640px;">
+                {{ nombre }} {{ apellido }}
+            </h2>
+            <h3 style="color: rgb(203, 119, 0);" >
+                Estos son mis familiares: 
+            </h3>
+        </div>
+    </header>
+
+
+    <div style="display: flexbox; position: relative; left: 250px; width: 300px;border-style: solid; border-radius: 5px; border-color: rgb(105, 4, 4); background-color: rgb(167, 245, 169); padding: 10px; ">
+        <main>
+        <ul>
+            {% for persona in lista_familiares %}
+            {% if persona == 'Patricia' %}
+            <li>
+                <h4>
+                    <a href="http://127.0.0.1:8000/mama/" target="_blank" rel="noopener noreferrer" {{ persona }}> Mama </a>
+
+                </h4>
+
+            </li>
+
+            {% elif persona == 'Ricardo' %}
+            <li>
+                <h4>
+                    <a href="http://127.0.0.1:8000/papa/" target="_blank" rel="noopener noreferrer" {{ persona }}> Papa </a>
+                </h4>
+            </li>
+
+            {% elif persona == 'Santiago' %}
+            <li>
+                <h4>
+                    <a href="http://127.0.0.1:8000/hermanomayor/" target="_blank" rel="noopener noreferrer" {{ persona }}>
+                        Hermano Mayor</a>
+                </h4>
+            </li>
+
+            {% else %}
+            <li>
+                <h4>
+                    <a href="http://127.0.0.1:8000/hermanomenor/" target="_blank" rel="noopener noreferrer" {{ persona }}>
+                        Hermano Menor</a>
+                </h4>
+            </li>
+
+            {% endif %}
+            {% endfor %}
+        </ul>
+        </main>
+    </div>
+
+</body>
+
+</html>
